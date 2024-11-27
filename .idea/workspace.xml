@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c213bc67-84cf-4240-81f7-fba20859c1ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonSeleniumProject-portovino.co.il.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonSeleniumProject-portovino.co.il.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/base_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/base_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_buy_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_buy_product.py" afterDir="false" />
-    </list>
+    <list default="true" id="c213bc67-84cf-4240-81f7-fba20859c1ce" name="Changes" comment="Commit for check" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +76,19 @@
       <option name="presentableId" value="Default" />
       <updated>1732629276895</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit for check">
+      <option name="closed" value="true" />
+      <created>1732717436507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717436507</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit for check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit for check" />
   </component>
 </project>
