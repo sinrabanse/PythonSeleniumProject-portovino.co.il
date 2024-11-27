@@ -18,7 +18,7 @@ class Base():
     def assert_word(self, word, result):
         value_word = word.text
         assert value_word == result
-        print("Good value word")
+        print(f"Good value word {value_word} = {result}")
 
 
     #Method to make screenshot
@@ -33,4 +33,9 @@ class Base():
     def assert_url(self, result):
         get_url = self.driver.current_url
         assert get_url == result
+        print("Good value URL")
+
+    def assert_url_start(self, result):
+        get_url = self.driver.current_url
+        assert get_url.startswith(result), f"Expected URL to start with {result}, but got {get_url}"
         print("Good value URL")
