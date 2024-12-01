@@ -1,16 +1,15 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 from base.base_class import Base
+from utilities.logger import Logger
+import allure
 
 
 class MainPage(Base):
 
     url = 'https://www.portovino.co.il/'
-
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     #locators
 
@@ -43,17 +42,15 @@ class MainPage(Base):
 
     #methods
 
-    def start(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_agree_button()
-
     def go_to_whisky_page(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_agree_button()
-        self.click_whisky_page_header()
-        self.assert_word(self.get_whisky_page_title(), "Whisky")
-        self.assert_url("https://www.portovino.co.il/whisky")
+        # Clicking age agree button, going to whisky page and checking URL and title
+        with allure.step("Go to whisky page"):
+            Logger.add_start_step(method="go_to_whisky_page")
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.get_current_url()
+            self.click_agree_button()
+            self.click_whisky_page_header()
+            self.assert_word(self.get_whisky_page_title(), "Whisky")
+            self.assert_url("https://www.portovino.co.il/whisky")
+            Logger.add_end_step(url=self.driver.current_url, method="go_to_whisky_page")

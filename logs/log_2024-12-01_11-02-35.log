@@ -1,0 +1,33 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2024-12-01 11:02:36.185235
+Start name method: go_to_whisky_page
+
+End time: 2024-12-01 11:02:41.777432
+End name method: go_to_whisky_page
+URL: https://www.portovino.co.il/whisky
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2024-12-01 11:02:41.777698
+Start name method: add_to_cart_product_1
+
+End time: 2024-12-01 11:02:52.496914
+End name method: add_to_cart_product_1
+URL: https://www.portovino.co.il/cart
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2024-12-01 11:02:52.497113
+Start name method: product_confirmation
+
+End time: 2024-12-01 11:03:07.729194
+End name method: product_confirmation
+URL: https://www.portovino.co.il/checkout?appSectionParams=%7B%22a11y%22%3Atrue%2C%22cartId%22%3A%2239f747f8-ea63-429b-9178-d4734b130a4d%22%2C%22storeUrl%22%3A%22https%3A%2F%2Fwww.portovino.co.il%22%2C%22cashierPaymentId%22%3A%22%22%2C%22origin%22%3A%22shopping+cart%22%2C%22originType%22%3A%22addToCart%22%2C%22checkoutId%22%3A%22ec6c06f8-47e7-4734-9e36-e115559aa217%22%2C%22isPreselectedFlow%22%3Afalse%7D&checkoutOOI=true
+
+-----

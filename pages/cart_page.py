@@ -1,19 +1,15 @@
 import time
+import allure
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
 
 from base.base_class import Base
-from pages.main_page import MainPage
+from utilities.logger import Logger
 
 
 class CartPage(Base):
-
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     #locators
 
@@ -64,9 +60,9 @@ class CartPage(Base):
     #actions
 
     def click_add_giftbox_checkbox(self):
-        time.sleep(5) # Эти 5 секунд нужны, т.к. без них галка ставится, а потом пропадает, при одном и том же локаторе
+        time.sleep(5) # Website is slow, so time is needed in this step
         self.get_add_giftbox_checkbox().click()
-        time.sleep(5)  # Эти 5 секунд тоже нужны, чтоб сайт посчитал сумму правильно
+        time.sleep(5)  # Website is slow, so time is needed in this step
         print("Click checkbox to add giftbox")
 
     def click_checkout_button(self):
@@ -106,16 +102,20 @@ class CartPage(Base):
     #methods
 
     def product_confirmation(self):
-        self.get_current_url()
-        self.click_add_giftbox_checkbox()
-        self.write_product_1_price_in_cart()
-        self.write_product_1_name_in_cart()
-        self.write_giftbox_price_in_cart()
-        self.write_giftbox_name_in_cart()
-        self.click_checkout_button()
-        time.sleep(5) # Не успевает прогрузиться страница иначе, сайт медленный
-        self.assert_url_start("https://www.portovino.co.il/checkout") # Потому что динамическое присваивание странице url
-        self.check_product_1_name_in_checkout()
-        self.check_product_1_price_in_checkout()
-        self.check_giftbox_name_in_checkout()
-        self.check_giftbox_price_in_checkout()
+        # Adding giftbox and checking products in cart
+        with allure.step("Product confirmation"):
+            Logger.add_start_step(method="product_confirmation")
+            self.get_current_url()
+            self.click_add_giftbox_checkbox()
+            self.write_product_1_price_in_cart()
+            self.write_product_1_name_in_cart()
+            self.write_giftbox_price_in_cart()
+            self.write_giftbox_name_in_cart()
+            self.click_checkout_button()
+            time.sleep(5) # Website is slow, so time is needed
+            self.assert_url_start("https://www.portovino.co.il/checkout") # Dynamic URL
+            self.check_product_1_name_in_checkout()
+            self.check_product_1_price_in_checkout()
+            self.check_giftbox_name_in_checkout()
+            self.check_giftbox_price_in_checkout()
+            Logger.add_end_step(url=self.driver.current_url, method="product_confirmation")

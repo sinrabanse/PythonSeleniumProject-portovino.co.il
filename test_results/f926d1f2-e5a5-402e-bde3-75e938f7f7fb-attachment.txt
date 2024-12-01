@@ -1,0 +1,34 @@
+Enter system
+Start Test: test_buy_product_1
+Current URL https://www.portovino.co.il/
+Click agree button
+Click whisky page in the header
+Good value word Whisky = Whisky
+Good value URL
+Current URL https://www.portovino.co.il/whisky
+Choose irish category
+Click on sorting field
+Choose sorting by price from high to low
+Click quick view of product 1
+Switched to product 1 iframe
+Price of product 1 = ₪390.00
+Name of product 1 = Redbreast 12 Years 700ml
+Click add to cart
+Click to cart button
+Good value URL
+Good value word Redbreast 12 Years 700ml = Redbreast 12 Years 700ml
+Good value word ₪390.00 = ₪390.00
+Current URL https://www.portovino.co.il/cart
+Click checkbox to add giftbox
+Price of product 1 in cart = ₪390.00
+Name of product 1 in cart = Redbreast 12 Years 700ml
+Price of giftbox in cart = ₪60.00
+Name of giftbox in cart = Gift Box
+Click checkout button
+Good value URL
+Good value word Redbreast 12 Years 700ml = Redbreast 12 Years 700ml
+Good value word ₪390.00 = ₪390.00
+Good value word Gift Box = Gift Box
+Good value word ₪60.00 = ₪60.00
+Finish Test: test_buy_product_1
+Exit system

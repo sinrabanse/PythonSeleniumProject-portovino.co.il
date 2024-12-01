@@ -1,4 +1,5 @@
 import time
+import allure
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -6,13 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class WhiskyPage(Base):
-
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     #locators
 
@@ -119,19 +117,24 @@ class WhiskyPage(Base):
 
     #methods
 
-    def buy_product_1(self):
-        self.get_current_url()
-        self.click_sidebar_category_irish()
-        self.click_sorting_field()
-        self.click_sorting_high_to_low()
-        self.move_cursor_to_product_1_card()
-        self.click_product_1_quick_view()
-        self.switch_to_iframe_product_1()
-        self.write_product_1_price()
-        self.write_product_1_name()
-        self.click_quick_add_to_cart()
-        self.driver.refresh() # пытался решить через iframe обратно вернуться и не смог к сожалению, по этому просто обновляю страницу
-        self.click_to_cart_button()
-        self.assert_url("https://www.portovino.co.il/cart")
-        self.check_product_1_name_in_cart()
-        self.check_product_1_price_in_cart()
+    def add_to_cart_product_1(self):
+        # Choosing category, sorting, adding product to cart and checking product in cart
+        with allure.step("Add to cart product 1"):
+            Logger.add_start_step(method="add_to_cart_product_1")
+            self.get_current_url()
+            self.click_sidebar_category_irish()
+            self.click_sorting_field()
+            self.click_sorting_high_to_low()
+            self.move_cursor_to_product_1_card()
+            time.sleep(3)
+            self.click_product_1_quick_view()
+            self.switch_to_iframe_product_1()
+            self.write_product_1_price()
+            self.write_product_1_name()
+            self.click_quick_add_to_cart()
+            self.driver.refresh()
+            self.click_to_cart_button()
+            self.assert_url("https://www.portovino.co.il/cart")
+            self.check_product_1_name_in_cart()
+            self.check_product_1_price_in_cart()
+            Logger.add_end_step(url=self.driver.current_url, method="add_to_cart_product_1")
